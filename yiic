@@ -1,6 +1,7 @@
 _yiic()
 {
-    YII_APP_ROOT="/var/vhosts/app.bizhappy.com"
+    # This must be set correctly for the correct environment.
+    YII_APP_ROOT="<Yii project root path>"
     AUTOCOMPLETE_COMMAND_NAME_COMMAND="bashcomplete"
     GET_OPTIONS_LIST_ACTION="getoptionslist"
 
