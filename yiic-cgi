@@ -1,0 +1,16 @@
+#!/usr/bin/php5-cgi -q
+<?php
+
+$pid = posix_getpid();
+$cmdLine = rtrim(file_get_contents("/proc/$pid/cmdline"), chr(0));
+
+$rawArgs = explode(chr(0), $cmdLine);
+$args = array_slice($rawArgs, 3);
+
+$cmdLine = implode(' ', array_slice($rawArgs, 0, 3));
+
+$_SERVER['SCRIPT_FILENAME'] = $rawArgs[2];
+$_SERVER['argv'] = array_merge(array($cmdLine), $args);
+$_SERVER['argc'] = count($args);
+
+require_once(dirname(__FILE__).'/yiic.php');

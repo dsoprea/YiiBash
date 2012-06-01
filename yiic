@@ -1,0 +1,25 @@
+_yiic()
+{
+    YII_APP_ROOT="/var/vhosts/app.bizhappy.com"
+    AUTOCOMPLETE_COMMAND_NAME_COMMAND="bashcomplete"
+    GET_OPTIONS_LIST_ACTION="getoptionslist"
+
+    local cur prev opts base
+    COMPREPLY=()
+
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+
+    if [ ${#COMP_WORDS[@]} -ge 3 ]; then
+        prevPrev="${COMP_WORDS[COMP_CWORD-2]}"
+    else
+        prevPrev=""
+    fi
+
+    opts=`cd $YII_APP_ROOT/protected && ./yiic-cgi $AUTOCOMPLETE_COMMAND_NAME_COMMAND $GET_OPTIONS_LIST_ACTION "$(printf %q $cur)" "$(printf %q $prev)" "$(printf %q $prevPrev)"`
+
+    COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+    return 0
+}
+complete -F _yiic yiic
+
