@@ -1,6 +1,3 @@
-YiiBash
-=======
-
 Dependencies
 ------------
 
@@ -16,7 +13,7 @@ Warnings
 Instructions
 ------------
 
-* Add the Bash auto-complete stub to /etc/bash_completion.d for PHP Yii projects. Make sure to set YII_APP_ROOT at the top.
-* Add yiic-cgi to your Yii project root.
-* Add BashCompleteCommand.php to the protected/commands/ directory in your Yii project.
+* Add the Bash auto-complete stub to "/etc/bash_completion.d" for PHP Yii projects. Make sure to set YII_APP_ROOT at the top.
+* Add "yiic-cgi" to your Yii project root.
+* Add "BashCompleteCommand.php" to the protected/commands/ directory in your Yii project.
 
