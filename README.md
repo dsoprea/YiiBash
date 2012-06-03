@@ -10,6 +10,8 @@ Warnings
 
 * There must be a separate instance of the bash-completion script stub for each project that you want to have completion for. By default, Yii's commands are launched via "yiic". You will have to rename this file (or symlink it from something else), and then modify each of the bash-completion stubs.
 
+* Currently, the command and command-action names will autocomplete, but only the first parameter will autocomplete.
+
 Instructions
 ------------
 
